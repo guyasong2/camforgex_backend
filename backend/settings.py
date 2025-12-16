@@ -106,7 +106,7 @@ CORS_ALLOWED_ORIGINS = (
 CORS_ALLOW_CREDENTIALS = False
 CORS_ALLOW_HEADERS = list(default_headers) + ['authorization']
 
-DEBUG = os.getenv('DEBUG', 'True') == 'True'
+DEBUG = os.getenv('DEBUG', 'False') == 'False'
 SECRET_KEY = os.getenv('SECRET_KEY', 'unsafe-dev-key')
 ALLOWED_HOSTS = ['*']
 
