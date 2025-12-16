@@ -1,4 +1,6 @@
 import os
+from decouple import config
+import dj_database_url
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
@@ -130,9 +132,11 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '5433'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
+
+DATABASES['default'] = dj_database_url.parse("postgresql://camforgex:S3KdVuPumhF8ItpD6PawK9PxRW7XooqQ@dpg-d50rn6emcj7s73et721g-a.oregon-postgres.render.com/camforgex")
 
 # Celery
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', 'redis://localhost:6379/0')
