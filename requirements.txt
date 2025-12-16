@@ -27,5 +27,7 @@ urllib3==2.5.0
 virtualenv==20.31.2
 virtualenvwrapper-win==1.2.7
 gunicorn
+whitenoise
+
 
 
